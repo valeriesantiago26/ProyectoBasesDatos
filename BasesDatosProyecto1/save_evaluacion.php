@@ -1,6 +1,5 @@
 <?php
 
-  echo "holaaa estoy conecta ";
 
   if(!empty($_POST))
   {
@@ -38,7 +37,13 @@
 
         $query_Resultado= "INSERT INTO Resultado (Valor, NumEstud, EvaluacionID, CompetenciaID, ComponenteID) VALUES('$valor', '$numEstudiante', '$evaluacion', '$compeID', '$compoID')";
 
-        $result_resultado= $conn->query($query_Resultado);
+        // $result_resultado= mysqli_query($conn, $query_Resultado);
+
+        if ($conn->query($query_Resultado)) {
+              echo "Evaluación creada";
+          } else {
+              echo "Error: " . $query_Resultado . "<br>" . $conn->error;
+          }
       }
       else{
         echo "else ";

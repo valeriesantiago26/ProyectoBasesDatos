@@ -21,10 +21,13 @@
     $borrar_resultado= "DELETE FROM Resultado  WHERE NumEstud = $id";
     $borrar_evaluacion= "DELETE FROM Evaluacion  WHERE NumEstudiante = $id";
     $borrar_est = "DELETE FROM Estudiante  WHERE NumEst = $id";
-    
-    $result=mysqli_query($conn,$borrar_est);
-    $result1=mysqli_query($conn,$borrar_evaluacion);
-    $result2=mysqli_query($conn,$borrar_resultado);
+
+    if ($conn->query($borrar_resultado) && $conn->query($borrar_evaluacion) && $conn->query($borrar_est) ) {
+          echo "Estudiante borrado";
+      } else {
+          echo "Error: " . $borrar_est . "<br>" . $conn->error;
+      }
+
     $conn->close();
   } 
 ?>
@@ -75,11 +78,11 @@
     			<h3>Borrar un estudiante</h3>
     		</div>
     		
-			<form class="form-horizontal" action="delete.php" method="post">
+			<form class="form-horizontal" method="post" action="delete.php?id=<?php echo $id;?>">
 			  <input type="hidden" name="id" value="<?php echo $id;?>"/>
 			  <p class="alert alert-error">¿Seguro que quieres borrar?</p>
 			  <div class="form-actions">
-				  <a type="submit" class="btn btn-danger" href="index.php">Sí</a>
+				  <button type="submit" class="btn btn-danger" href="index.php">Sí</button>
 				  <a class="btn btn-info" href="index.php">No</a>
 				</div>
 			</form>

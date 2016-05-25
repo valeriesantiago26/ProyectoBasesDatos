@@ -13,10 +13,6 @@
     
     $conn =  new mysqli($servername, $username, $password, $dbname);
 
-    $nombre1= "SELECT * FROM Estudiante WHERE NumEst= $id";
-    $result_nombre= mysqli_query($conn,$nombre);
-    $nombre= mysqli_fetch_array($result_nombre);
-
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
@@ -66,7 +62,7 @@
       </div>
     </nav>   
 
-    <h2>Hola <?php echo $nombre[0]; ?></h2>
+    <h2>Centros de Práctica</h2>
    
     <table class="table table-striped table-hover ">
         <thead>

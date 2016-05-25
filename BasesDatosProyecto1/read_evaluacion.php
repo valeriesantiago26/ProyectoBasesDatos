@@ -22,9 +22,8 @@
     }
 
     $sql = "SELECT *
-      FROM ((((Resultado join Evaluacion on Resultado.NumEstud = Evaluacion.NumEstudiante) join Estudiante on Estudiante.NumEst = Evaluacion.NumEstudiante) join Competencia on Competencia.CompetenciaID = Resultado.CompetenciaID)join Componente on Resultado.ComponenteID = Componente.ComponenteID)
-      WHERE NumEst= $id
-      GROUP BY Resultado.EvaluacionID";
+      FROM (((Resultado join Evaluacion on Resultado.NumEstud = Evaluacion.NumEstudiante) join Estudiante on Estudiante.NumEst = Evaluacion.NumEstudiante))
+      WHERE NumEst= $id";
 
     $result=mysqli_query($conn,$sql);
 
@@ -69,7 +68,7 @@
       </div>
     </nav>   
 
-    <h2>Hola <?php echo $nombre[0]; ?></h2>
+    <h2>Evaluación</h2>
    
     <table class="table table-striped table-hover ">
         <thead>
@@ -89,7 +88,7 @@
                 echo '<td>'. $data['EvaluacionID'] . '</td>';
                 echo '<td>'. $data['Fecha'] . '</td>';
                 echo '<td>'. $data['CompetenciaID'] . '</td>';
-                echo '<td>'. $data['CompetenciaID'] . '</td>';
+                echo '<td>'. $data['ComponenteID'] . '</td>';
                 echo '<td>'. $data['Valor'] . '</td>';
                 echo '<td>'. $data['NombreEst'] . '</td>'; 
                 echo '</tr>';

@@ -1,6 +1,5 @@
 <?php
-
-  $id = null;
+  $id= null;
   if ( !empty($_GET['id'])) {
     $id = $_REQUEST['id'];
   }
@@ -50,13 +49,13 @@
       } 
    
 
-      $query_Supervisor= "UPDATE Supervisor SET SupervisorID= $supervisorID, NombreSupervisor= $nombreSupervisor , EspecialidadSupervisor= $especialidadSupervisor";
+      $query_Supervisor= "UPDATE Supervisor SET NumSupervisor= '$supervisorID', NombreSupervisor='$nombreSupervisor' , EspecialidadSupervisor= '$especialidadSupervisor' WHERE NumSupervisor= $supervisorID";
 
-      $query_Centro= "UPDATE CentroDePractica SET CentroPracID= $centroID, NombreEscuela= $nombreCentro, tipo= $tipo, region= $regioN, director= $director, AnoDeComienzo= $anoComienCentro, NivelEscuela= $nivelEscuela";
+      $query_Centro= "UPDATE CentroDePractica SET CentroPracID= '$centroID', NombreEscuela= '$nombreCentro', tipo= '$tipo', region= '$regioN', director= '$director', AnoDeComienzo= '$anoComienCentro', NivelEscuela= '$nivelEscuela' WHERE CentroPracID= $centroID";
 
-      $query_Maestro= "UPDATE MaestroCooperador SET MaestroCoopID= $maestroID, EscuelaID= $centroID, NombreMaestro= $nombreMaestro, EspecialidadMaestro= $especialidadMaestro, AnoComienzo= $anoComienzoMaestro, AnoCurso= $anoCurso, NivelMaestro= $nivelMaestro";
+      $query_Maestro= "UPDATE MaestroCooperador SET MaestroCoopID= '$maestroID', EscuelaID= '$centroID', NombreMaestro= '$nombreMaestro', EspecialidadMaestro= '$especialidadMaestro', AnoComienzo= '$anoComienzoMaestro', AnoCurso= '$anoCurso', NivelMaestro= '$nivelMaestro' WHERE MaestroCoopID= $maestroID";
 
-      $query_Est = "UPDATE Estudiante SET NumEst= $numEst, NombreEst= $nombreEst, EspecialidadEst= $especialidadEst, NivelEst= $nivelEst, CentroPracID= $centroID, AnoAcademico= $anoAcademico, Semestre= $semestre, MaestroCoopID= $maestroID, NumSupervisor= $supervisorID, CantidadHoras= $horas";
+      $query_Est = "UPDATE Estudiante SET NumEst= '$numEst', NombreEst= '$nombreEst', EspecialidadEst= '$especialidadEst', NivelEst= '$nivelEst', CentroPracID= '$centroID', AnoAcademico= '$anoAcademico', Semestre= '$semestre', MaestroCoopID= '$maestroID', NumSupervisor= '$supervisorID', CantidadHoras= '$horas' WHERE NumEst= $id";
 
       if ($conn->query($query_Supervisor) && $conn->query($query_Centro) && $conn->query($query_Maestro) && $conn->query($query_Est) ) {
           echo "Updated successfully";
@@ -114,7 +113,7 @@
 
     <div class="alert alert-dismissible alert-success" align="center">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>Estudiante </strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+      <strong>Estudiante Modificado.</strong>
     </div>
 
 </body>

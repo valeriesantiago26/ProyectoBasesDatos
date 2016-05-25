@@ -116,8 +116,8 @@
       <label for="select" class="col-lg-2 control-label">Semestre</label>
       <div class="col-lg-10">
         <select class="form-control" name="Semestre" id="select">
-          <option>Fall</option>
-          <option>Spring</option>
+          <option>Primer</option>
+          <option>Segundo</option>
         </select>
       </div>
     </div>

@@ -3,13 +3,6 @@
   if(!empty($_POST))
   {
 
-    $NumEst_Error = null;
-    $NombreEst_Error = null;
-    $CentroID_Error = null;
-    $MaestroID_Error = null;
-    $SupervisorID_Error = null;
-
-
    // variables for input data
     $numEst= $_POST['NumEstudiante'];
     $nombreEst = $_POST['Nombre'];
@@ -39,49 +32,6 @@
     $especialidadSupervisor= $_POST['EspecialidadSupervisor'];
 
    // variables for input data
-
-  $valid = true;
-
-
-    // if (strlen($numEst) <> 9 ) {
-    //   $NumEst_Error = "Por favor escriba el número de estudiante correcto.";
-    //   $valid = false;
-    //   echo "Estoy en error numero ";
-    // }
-    // if (empty($nombreEst)) {
-    //   $NombreEst_Error = "Por favor escriba el nombre del estudiante.";
-    //   $valid = false;
-    //   echo "estoy en error nombre ";
-    // }
-
-    // if ($NumEst_Error=== false) {
-    //   echo "Por favor escriba el número de estudiante correcto.";
-    // }
-    // if ($NombreEst_Error=== false) {
-    //   echo "Por favor escriba el nombre del estudiante.";
-    // }
-
-    // #/////////////////////CENTRO DE PRACTICA/////////////////////
-    // if (strlen($centroID) <> 5 AND floor($centroID/10000) <> 2) {
-    //   $CentroID_Error = 'Por favor escriba el identificador del centro de práctica, recuerde que debe comenzar con 2.';
-    //   echo "Estoy en error centro ";
-    //   $valid = false;
-    // }
-
-    // if ($CentroID_Error=== false) {
-    //   echo "Por favor escriba el identificador del centro de práctica, recuerde que debe comenzar con 2.";
-    // }
-    // #//////////////////////MAESTRO COOPERADOR////////////////
-    // if (strlen($maestroID) <> 5 AND floor($maestroID/10000) <> 3) {
-    //   $nameError = 'Por favor escriba el identificador del maestro cooperador, recuerde que debe comenzar con 3.';
-    //   echo "Estoy en error maestro ";
-    //   $valid = false;
-    // }
-    // if (strlen($supervisorID) <> 4 AND floor($supervisorID/1000) <> 1) {
-    //   $nameError = 'Por favor escriba el identificador del supervisor de  práctica, recuerde que debe comenzar con 1.';
-    //   echo "Estoy en error supervisor ";
-    //   $valid = false;
-    // }
    
    // sql query for inserting data into database  
        

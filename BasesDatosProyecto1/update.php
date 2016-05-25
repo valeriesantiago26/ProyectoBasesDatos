@@ -66,7 +66,7 @@
       </div>
     </nav>  
 
-  <form class="form-horizontal" method="post" action="save_update.php">
+  <form class="form-horizontal" method="post" action="save_update.php?id= <?php echo $data['NumEst'];?>">
     <fieldset>
       <legend><?php echo $data['NombreEst'];?></legend>
 
@@ -150,8 +150,8 @@
         <div class="col-lg-10">
           <select class="form-control" name="Semestre" id="select">
           <option selected="selected"><?php echo $data['Semestre'];?></option>
-            <option>Fall</option>
-            <option>Spring</option>
+            <option>Primer</option>
+            <option>Segundo</option>
           </select>
         </div>
       </div>
@@ -308,16 +308,15 @@
           <input type="text" class="form-control" name="EspecialidadSupervisor" value="<?php echo $data['EspecialidadSupervisor']?>">
         </div>
       </div>
-    </fieldset>
-  </form>
 
     <div class="form-actions">
       <div class="col-lg-10 col-lg-offset-2">
         <a class="btn btn-info" href="index.php">Regresar</a>
         <a type="reset" class="btn btn-default" href="update.php">Cancelar</a>
-        <button type="submit" name="btn-submit" class="btn btn-primary" href="save_update.php">Enviar</button>
+        <button type="submit" name="btn-submit" class="btn btn-primary" href="update.php">Enviar</button>
       </div>
     </div>
+
     </fieldset>
   </form>
 
